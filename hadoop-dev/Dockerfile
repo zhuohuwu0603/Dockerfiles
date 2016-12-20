@@ -36,9 +36,9 @@ RUN \
     rm -fv "$TAR" && \
     { rm -rf hadoop/share/doc; : ; } && \
     # Hadoop 1.x
-    #/hadoop/bin/hadoop namenode -format && \
+    /hadoop/bin/hadoop namenode -format && \
     # Hadoop 2.x
-    /hadoop/bin/hdfs namenode -format && \
+    #/hadoop/bin/hdfs namenode -format && \
     yum autoremove -y && \
     yum install -y hostname && \
     yum clean all
