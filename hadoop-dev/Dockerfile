@@ -39,8 +39,9 @@ RUN yum install -y hostname && \
     # Hadoop 1.x
     /hadoop/bin/hadoop namenode -format && \
     # Hadoop 2.x
-    #/hadoop/bin/hdfs namenode -format && \
-    yum autoremove -y && \
+    /hadoop/bin/hdfs namenode -format && \
+    # tries to remove systemd, which breaks
+    #yum autoremove -y && \
     yum install -y hostname && \
     yum clean all
 
